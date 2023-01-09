@@ -11,8 +11,8 @@ Registration:
 ```php
 $router = new Router();
 
-$router->register('/products', 			 'get', 	 'ProductsController', 'index');
-$router->register('/products/new', 	 'get', 	 'ProductsController', 'new');
+$router->register('/products',     'get', 'ProductsController', 'index');
+$router->register('/products/new', 'get', 'ProductsController', 'new');
 ```
 
 It's not my favorite way yet, but it is as near as I can get with the time I have.
