@@ -48,7 +48,7 @@
 	}
 
 	function isRouteMatchURI($route, $uri) {
-		return preg_match($this->getRegexFromRoute($route), $uri, $matches, PREG_UNMATCHED_AS_NULL);
+		return preg_match($this->getRegexFromRoute($route), rtrim($uri, '/'), $matches, PREG_UNMATCHED_AS_NULL);
 	}
 
 	function getRegexFromRoute($route) {

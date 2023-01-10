@@ -6,5 +6,9 @@
 		require_once $filepath . '.html.php';
 
 	}
+
+	static function redirect ($path) {
+		header("Location: $path");
+	}
 	
 }
