@@ -7,6 +7,22 @@
     return self::convertResult(self::instance()->query($query));
   }
 
+  static function where ($where, $params) {
+    $table = static::$table;
+    
+    $query = "SELECT * FROM $table WHERE $where;";
+
+    $stmt = self::instance()->prepare($query);
+
+    $s = str_repeat('s', count($params));
+
+    $stmt->bind_param($s, ...$params);
+
+    $stmt->execute();
+
+    return self::convertResult($stmt->get_result());
+  }
+
   function update ($params) {
     $filterParams = self::filterParams($params);
 

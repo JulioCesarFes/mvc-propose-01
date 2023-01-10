@@ -7,7 +7,4 @@
 
   protected static $permited_params = ['name'];
 
-  function olha () {
-    return "OLHA $this->name";
-  }
 }

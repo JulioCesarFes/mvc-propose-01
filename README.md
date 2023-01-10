@@ -21,3 +21,13 @@ It's not my favorite way yet, but it is as near as I can get with the time I hav
 
 I like the `spl_autoload_register`.
 You can basically call a `new Class` and it requires the file for you, you don't need thousands of requires now.
+
+
+# Proposta de MVC #01
+
+Julio *oi*
+
+
+# asdasd
+## asdasd
+### asdasdasd

@@ -2,7 +2,8 @@
 
 	function index () {
 
-		$products = ProductModel::all();
+		// $products = ProductModel::all();
+		$products = ProductModel::where('id >= ?', [7]);
 
 		Views::render('products.index', get_defined_vars());
 	}
