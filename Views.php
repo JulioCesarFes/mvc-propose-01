@@ -1,4 +1,4 @@
-<?php class View {
+<?php class Views {
 
 	static function render ($filepath, $arguments) {
 
