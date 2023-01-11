@@ -1,4 +1,10 @@
-<?php class Model {
+<?php
+
+namespace Core\Orm;
+
+use mysqli;
+
+class Model {
 
   static function all () {
     $table = static::$table;
