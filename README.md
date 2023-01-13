@@ -14,18 +14,18 @@ Na index deixei o `autoloader` para puxar os arquivos de qualquer classe que eu 
 spl_autoload_register(function ($className) { require_once "$className.php"; });
 ```
 
-### 2. Router
+### 2. core\Router\Router
 
 Criei uma maneira simples de registrar a rota e o verbo e para qual controller ele mandaria.
 
 ```php
-$router->register('/', 'get', 'ProductsController', 'index');
+$router->register('/', 'get', 'App\Controller\ProductsController', 'index');
 ```
 
 As rotas também podem ser criadas passando um parâmetro na URL.
 
 ```php
-$router->register('/produto/:id', 'get', 'ProductsController', 'show');
+$router->register('/produto/:id', 'get', 'App\Controller\ProductsController', 'show');
 ```
 
 O primeiro argumento é a Rota.
@@ -38,7 +38,7 @@ O quarto argumento é o Método do Controller. Esse é o que será acionado quan
 O Controller ficou super simples também, basta criar um arquivo com o mesmo nome da Classe e usar as funções.
 
 ```php
-class ProductsController {
+class App\Controller\ProductsController {
 	function index () {}
 }
 ```
@@ -47,25 +47,25 @@ Quaso for passado um argumento na rota ele pode ser usado pegando diretamente
 dos argumentos da função.
 
 ```php
-class ProductsController {
+class App\Controller\ProductsController {
 	function show ($id) {}
 }
 ```
 
-4. Views
+4. core\View\Views
 
-Quando você chamar um Método do Controller, mesmo que não faça interações com o banco de dados, ele pode exibir uma tela ou redirecionar para outra. Achei conveniente colocar essas duas funcionalidades dentro de uma Classe chamada Views.
+Quando você chamar um Método do Controller, mesmo que não faça interações com o banco de dados, ele pode exibir uma tela ou redirecionar para outra. Achei conveniente colocar essas duas funcionalidades dentro de uma Classe chamada core\View\Views.
 
 Para redirecionar, basta:
 
 ```php
-Views::redirect('/other/route');
+core\View\Views::redirect('/other/route');
 ```
 
 Para exibir uma tela, basta:
 
 ```php
-Views::render('filename', get_defined_vars());
+core\View\Views::render('filename', get_defined_vars());
 ```
 
 O `get_defined_vars` pega todas as variáveis declaradas dentro da função e transfere para dentro do arquivo php
