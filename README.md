@@ -38,7 +38,7 @@ O quarto argumento é o Método do Controller. Esse é o que será acionado quan
 O Controller ficou super simples também, basta criar um arquivo com o mesmo nome da Classe e usar as funções.
 
 ```php
-class App\Controller\ProductsController {
+class ProductsController {
 	function index () {}
 }
 ```
@@ -47,7 +47,7 @@ Quaso for passado um argumento na rota ele pode ser usado pegando diretamente
 dos argumentos da função.
 
 ```php
-class App\Controller\ProductsController {
+class ProductsController {
 	function show ($id) {}
 }
 ```
@@ -59,13 +59,13 @@ Quando você chamar um Método do Controller, mesmo que não faça interações 
 Para redirecionar, basta:
 
 ```php
-core\View\Views::redirect('/other/route');
+Views::redirect('/other/route');
 ```
 
 Para exibir uma tela, basta:
 
 ```php
-core\View\Views::render('filename', get_defined_vars());
+Views::render('filename', get_defined_vars());
 ```
 
 O `get_defined_vars` pega todas as variáveis declaradas dentro da função e transfere para dentro do arquivo php
