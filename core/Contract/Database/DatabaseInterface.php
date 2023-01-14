@@ -14,7 +14,7 @@ interface DatabaseInterface
 
     public function groupBy(string $column): DatabaseInterface;
 
-    public function orderBy(string $column, OrderBy $orientation = OrderBy::ASCENDING): DatabaseInterface;
+    public function orderBy(string $column, OrderBy $orientation): DatabaseInterface;
 
     public function offset(int $value): DatabaseInterface;
 

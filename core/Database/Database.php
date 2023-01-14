@@ -45,7 +45,7 @@ class Database extends Connection implements DatabaseInterface
         return $this;
     }
 
-    public function orderBy(string $column, OrderBy $orientation = OrderBy::ASCENDING): DatabaseInterface
+    public function orderBy(string $column, OrderBy $orientation): DatabaseInterface
     {
         $this->commands[__FUNCTION__] = "ORDER BY $column {$orientation->value}";
 
