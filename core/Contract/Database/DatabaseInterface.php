@@ -28,5 +28,7 @@ interface DatabaseInterface
 
     public function update(array $values): int;
 
+    public function delete(): int;
+
     public function insert(array $values): false|string|null;
 }

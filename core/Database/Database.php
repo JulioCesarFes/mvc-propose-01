@@ -89,10 +89,6 @@ class Database extends Connection implements DatabaseInterface
     {
         $query = "UPDATE $this->table SET {$this->getSqlValues($values)} {$this->getSqlWheres()}";
 
-        echo "<pre>";
-        var_dump(array_merge($this->values, array_values($values)));
-        echo "</pre>";
-
         return $this->execute($query, array_merge(array_values($values), $this->values));
     }
 
@@ -105,6 +101,13 @@ class Database extends Connection implements DatabaseInterface
         $query = "INSERT INTO $this->table ($keys) VALUES ($values_string)";
 
         return $this->executeInsert($query, array_values($values));
+    }
+
+    public function delete(): int
+    {
+        $query = "DELETE FROM $this->table {$this->getSqlWheres()}";
+
+        return $this->execute($query, $this->values);
     }
 
     private function getSqlValues(array $values): string
